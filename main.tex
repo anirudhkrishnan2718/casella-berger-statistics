@@ -1,0 +1,53 @@
+\documentclass[letterpaper, 10pt, oneside, openany]{memoir}
+
+% ===================================  LOAD PACKAGES  ====================================
+\usepackage[nopatch=footnote]{microtype}
+\usepackage[rgb, luatex, x11names, svgnames]{xcolor}
+\usepackage{kantlipsum}
+\usepackage{hyperref}
+\usepackage{lua-ul, luacolor}
+\usepackage{unicodefonttable}
+
+% =======================================  FONTS  ========================================
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmathfont{Tex Gyre Schola Math}
+\setsansfont{Tex Gyre Adventor}
+\setmainfont{Tex Gyre ScholaX}
+\setmonofont{Iosevka Medium}
+% \usepackage{newcomputermodern}
+\newfontfamily{\textfancy}{Lobster Two}
+
+% ===================================  DATE AND TIME  ====================================
+
+\usepackage[english]{datetime2}
+\DTMsavedate{start_date}{2026-03-01}
+\DTMsavedate{end_date}{2026-12-31}
+
+% ====================================  CUSTOM STYLING  ==================================
+
+\raggedyright
+
+\setlrmarginsandblock{1in}{1in}{*}
+\setulmarginsandblock{1.25in}{1.25in}{*}
+\checkandfixthelayout
+
+\nouppercaseheads
+\aliaspagestyle{chapter}{empty}
+\pagestyle{ruled}
+\headstyles{memman}
+
+\setsecheadstyle{\scshape\Large}
+
+% ====================================  USER MACROS  =====================================
+
+% =======================================  MAIN  =========================================
+\begin{document}
+\frontmatter
+\input{custom_title_page_cbs.tex}
+
+\tableofcontents*
+
+\mainmatter
+\include{Notes/notes_01}
+\end{document}
